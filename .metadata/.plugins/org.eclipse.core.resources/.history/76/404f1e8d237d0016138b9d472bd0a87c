@@ -1,0 +1,33 @@
+<manager id="1">
+  <registrations id="2"/>
+  <participants id="3">
+    <participant id="4">
+      <name>Oscar</name>
+    </participant>
+    <participant id="5">
+      <name>Oscar</name>
+    </participant>
+    <participant id="6">
+      <name>Jennifer</name>
+    </participant>
+    <participant id="7">
+      <name>Oscar</name>
+    </participant>
+    <participant id="8">
+      <name>Jennifer</name>
+    </participant>
+    <participant id="9">
+      <name>Oscar</name>
+    </participant>
+    <participant id="10">
+      <name>Jennifer</name>
+    </participant>
+    <participant id="11">
+      <name>Martin</name>
+    </participant>
+    <participant id="12">
+      <name>Martin</name>
+    </participant>
+  </participants>
+  <events id="13"/>
+</manager>

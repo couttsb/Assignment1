@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.controller.TestEventRegistrationController"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.persistence.TestPersistence"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="javax.swing.WindowConstants"/>
+<fullyQualifiedTypeName name="ca.mcgill.eventregistration.view.EventRegistrationPage"/>
+<fullyQualifiedTypeName name="javax.swing.GroupLayout"/>
+<fullyQualifiedTypeName name="javax.swing.SwingConstants"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.controller.EventRegistrationController"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.model.PersistenceXStream"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.persistence.PersistenceEventRegistration"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.model.Registration"/>
+<fullyQualifiedTypeName name="javax.swing.JComboBox"/>
+<fullyQualifiedTypeName name="org.jdatepicker.impl.JDatePickerImpl"/>
+<fullyQualifiedTypeName name="javax.swing.JSpinner"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.model.Participant"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.model.Event"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="org.jdatepicker.impl.JDatePanelImpl"/>
+<fullyQualifiedTypeName name="org.jdatepicker.impl.SqlDateModel"/>
+<fullyQualifiedTypeName name="javax.swing.JSpinner.DateEditor"/>
+<fullyQualifiedTypeName name="javax.swing.SpinnerDateModel"/>
+<fullyQualifiedTypeName name="java.awt.Event"/>
+<fullyQualifiedTypeName name="ca.mcgill.ecse321.eventregistration.model.RegistrationManager"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.sql.Time"/>
+</qualifiedTypeNameHistroy>
