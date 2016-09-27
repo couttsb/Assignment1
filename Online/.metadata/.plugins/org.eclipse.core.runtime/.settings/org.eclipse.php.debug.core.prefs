@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+org.eclipse.php.debug.core.xdebug_idekey=ECLIPSE_DBGP_142.157.147.60
+org.eclipse.php.debug.coreinstalledPHPDebuggers=org.eclipse.php.debug.core.xdebugDebugger
+org.eclipse.php.debug.coreinstalledPHPDefaults=org.eclipse.php.debug.core.xdebugDebugger\=PHP 5.6.24 (CLI)
+org.eclipse.php.debug.coreinstalledPHPInis=C\:\\xampp\\php\\php.ini
+org.eclipse.php.debug.coreinstalledPHPLoadIniDefaults=false
+org.eclipse.php.debug.coreinstalledPHPLocations=C\:\\xampp\\php\\php.exe
+org.eclipse.php.debug.coreinstalledPHPNames=PHP 5.6.24 (CLI)
+org.eclipse.php.debug.corephp_versions=null

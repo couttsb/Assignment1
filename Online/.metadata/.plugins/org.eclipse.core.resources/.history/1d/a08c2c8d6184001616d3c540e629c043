@@ -1,0 +1,41 @@
+<?php
+require_once 'C:\Users\Brent\ECSE-Assignment1\EventRegistration\Online\Controller\InputValidator.php';
+require_once 'C:\Users\Brent\ECSE-Assignment1\EventRegistration\Online\Persistence\EventRegistrationPersistence.php';
+require_once 'C:\Users\Brent\ECSE-Assignment1\EventRegistration\Online\Model\Participant.php';
+require_once 'C:\Users\Brent\ECSE-Assignment1\EventRegistration\Online\Model\RegistrationManager.php';
+
+
+class Controller {
+	public function __construct() {
+		
+	}
+	
+	public function createParticipant($participant_name) {
+		// 1. Validate input
+		$name = InputValidator::validate_input($participant_name);
+			if ($name == null || strlen($name) == 0) {
+				throw new Exception("Participant name cannot be empty!");
+			} else {
+				//2. Load all of the data
+				$pm = new PersistenceEventRegistration();
+				$rm = $pm->loadDataFromStore();
+				
+				// 3. Add the new participant
+				$participant = new Participant($name);
+				$rm->addParticipant($participant);
+				
+				// 4. Write all of the data
+				$pm->writeDataToStore($rm);
+			}
+		}
+	}
+	
+	public function createEvent($event_name, $event_date, $starttime, $endtime) {
+		
+	}
+	
+	public function register($aParticipant, $aEvent) {
+		
+	}
+	
+}
