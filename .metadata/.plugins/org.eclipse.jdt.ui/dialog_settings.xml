@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="false" key="ProjectSelectionDialog.show_all"/>
 	<item value="C:\Users\Brent\OneDrive - McGill University\School Work\5th Semester\ECSE 321\Assignment 1\Part 1" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>

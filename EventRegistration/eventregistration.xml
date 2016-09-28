@@ -12,11 +12,16 @@
         <endTime id="8">12:00:00</endTime>
       </event>
     </registration>
+    <registration id="9">
+      <id>1</id>
+      <participant reference="4"/>
+      <event reference="5"/>
+    </registration>
   </registrations>
-  <participants id="9">
+  <participants id="10">
     <participant reference="4"/>
   </participants>
-  <events id="10">
+  <events id="11">
     <event reference="5"/>
   </events>
 </manager>

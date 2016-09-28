@@ -41,6 +41,9 @@
 			}
 			?>
 			</span></p>
+			<p>Date? <input type="date" name="event_date" value="<?php echo date('Y-m-d'); ?>" /></p>
+			<p>Start time? <input type="time" name="starttime" value="<?php echo date('H:i'); ?>" /></p>
+			<p>End time? <input type="time" name="endtime" value="<?php echo date('H:i'); ?>" /></p>
 			<p><input type="submit" value="Add Event"/></p>
 		</form>
 	</body>

@@ -10,6 +10,14 @@ try {
 } catch (Exception $e) {
 	$_SESSION["errorEventName"] = $e->getMessage();
 }
+
+try { 
+	$c->createEvent($_POST['event_date']) = "";
+	$_SESSION["errorEventDate"] = "";
+} catch (Exception $e) {
+	$_SESSION["errorEventName"] = $e->getMessage();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +28,9 @@ try {
 </html>
 
 
-CODE SNIPPETS THAT MUST BE INCORPORATED
 
-<input type="date" name="event_date" value="<?php echo date('Y-m-d'); ?>" />
-<input type="time" name="starttime" value="<?php echo date('H:i'); ?>" />
 
-strtotime($date) == false // cannot be converted
+// strtotime($date) == false // cannot be converted
 
-date('Y-m-d', strtotime($date))
-date('H:i', strtotime($start))
+// date('Y-m-d', strtotime($date))
+// date('H:i', strtotime($start))
