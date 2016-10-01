@@ -1,0 +1,31 @@
+<manager id="1">
+  <registrations id="2">
+    <registration id="3">
+      <id>1</id>
+      <participant id="4">
+      </participant>
+    </registration>
+    <registration id="9">
+      <id>1</id>
+      <participant reference="4"/>
+      <event reference="5"/>
+    </registration>
+    <registration id="10">
+      <id>1</id>
+      <participant reference="4"/>
+      <event reference="5"/>
+    </registration>
+    <registration id="11">
+      <id>2</id>
+    </registration>
+    <registration id="17">
+    </registration>
+    <registration id="18">
+    </registration>
+    <registration id="19">
+    </registration>
+  </registrations>
+  </participants>
+  <events id="21">
+  </events>
+</manager>

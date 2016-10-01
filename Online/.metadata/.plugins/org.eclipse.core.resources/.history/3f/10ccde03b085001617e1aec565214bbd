@@ -1,0 +1,41 @@
+<?php
+require_once 'Controller/Controller.php';
+
+session_start();
+
+$c = new Controller();
+try {
+	$c->createEvent($_POST['event_name']);
+	$_SESSION["errorEventName"] = "";
+	
+	$c->createEvent($_POST['event_date']);
+	$date = date('Y-m-d', strtotime($event_date));
+	if (strtotime($event_date)== false) {
+	$_SESSION["errorEventDate"] = "";
+	}
+	
+	$c->createEvent($_POST['starttime']);
+	$start = date('H:i', strtotime($starttime));
+	if (strtotime($starttime)== false) {
+	$_SESSION["errorStartTime"] = "";
+	}
+	
+	$c->createEvent($_POST['endtime']);
+	$end = date('H:i', strtotime($endtime));
+	if (strtotime($endtime)== false) {
+	$_SESSION["errorEndTime"] = "";
+	}
+} catch (Exception $e) {
+	$_SESSION["errorEventName"] = $e->getMessage();
+	$_SESSION["errorEventDate"] = $e->getMessage();
+	$_SESSION["errorStartTime"] = $e->getMessage();
+	$_SESSION["errorEndTime"] = $e->getMessage();
+}
+?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="refresh" content="0; url=/EventRegistration/" />
+	</head>
+</html>

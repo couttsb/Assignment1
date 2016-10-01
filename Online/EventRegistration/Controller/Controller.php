@@ -6,9 +6,11 @@ require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\Par
 require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\Registration.php';
 require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\RegistrationManager.php';
 
-
 class Controller {
-	public function __construct() {
+	private $filename;
+	public function __construct($filename = 'data.txt') {
+		chmod('data.txt', 0644);
+		$this->filename = $filename;
 	}
 	
 	public function createParticipant($participant_name) {
@@ -44,18 +46,49 @@ class Controller {
 				$error .= "@4Event end time must be specified correctly (HH:MM)! ";
 			} if ($endtime != null && $starttime != null && date('H:i', strtotime($starttime)) > date('H:i', strtotime($endtime))) {
 				$error .= "@5Event end time cannot be before event start time!";
-			} throw new Exception(trim($error));
-			
-				// 2. Load all of the data 
+			} if (trim($error) > 0) {
+				throw new Exception(trim($error));
+			} else {
+				// 2. Load all of the data including event name, event date, starttime, and endtime
 				$pm = new PersistenceEventRegistration();
 				$rm = $pm->loadDataFromStore();
 				
-				// 3. Add the new event
-				$event = new Event($name);
-				$rm = $pm->addEvent($event);
+				$aName = NULL;
+				foreach ($rm->getEvents() as $event) {
+					if (strcmp($event->getName(), $aName) == 0) {
+						$aName = $event;
+						break;
+					}
+				}
+				$aEventDate = NULL;
+				foreach ($rm->getEvents() as $event) {
+					if (strcmp($event->getEventDate(), $aEventDate) == 0) {
+						$aEventDate = $event;
+						break;
+					}
+				}
+				$aStartTime = NULL;
+				foreach ($rm->getEvents() as $event) {
+					if (strcmp($event->getStartTime(), $aStartTime) == 0) {
+						$aStartTime = $event;
+						break;
+					}
+				}
+				$aEndTime = NULL;
+				foreach ($rm->getEvents() as $event) {
+					if (strcmp($event->getEndTime(), $aEndTime) == 0) {
+						$aEndTime = $event;
+						break;
+					}
+				}
+				
+				// 3. Add the new event 
+				$aEvent = new Event($aName, $aEventDate, $aStartTime, $aEndTime);
+				$rm->addEvent($aEvent);
 				
 				// 4. Write all of the data
 				$pm->writeDataToStore($rm);
+			}
 	}
 	
 	public function register($aParticipant, $aEvent) {
@@ -100,7 +133,7 @@ class Controller {
 				if ($aEvent != NULL) {
 					$error .= $aEvent;
 				}
-				$error .= " not found! ";
+				$error .= " not found!";
 			}
 			throw new Exception(trim($error));
 		}

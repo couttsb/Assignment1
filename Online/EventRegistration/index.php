@@ -4,43 +4,52 @@
 		<meta charset="UTF-8">
 		<title>Event Registration</title>
 		<style>
-			.error {color: #FF0000;}
+			.error {color: #FF0000;} 
 		</style>
 	</head>
-	<body>
+	<body>		
 		<?php 
-		require_once "Model/Registration.php";
-		?>
-		<form action="register.php" method="post">
-			<p>Name? <input type="text" name="participant_name" />
-			<p>Event? <input type="text" name="event_name" />
-			<span class="error">
-			<?php 
-			if (isset($_POST['participantspinner'])) {
-				$participant = $_POST['participantspinner'];
-			}
-			if (isset($_POST['eventspinner'])) {
-				$event = $_POST['eventspinner'];
-			}
-			if (isset($_SESSION['errorRegister']) && !empty($_SESSION['errorRegister'])) {
-				echo " * " . $_SESSION["errorRegister"];
-			}
-			?>
-			</span>
-			<p><input type="submit" value="Register"/></p>
-		</form>
-		
-		<?php 
+		require_once "Model/Event.php";
 		require_once "Model/Participant.php";
+		require_once "Model/RegistrationManager.php";
+		require_once "Persistence/PersistenceEventRegistration.php";
 		
 		session_start();
 		
+		// Retreive the data from the model
+		$pm = new PersistenceEventRegistration();
+		$rm = $pm->loadDataFromStore();
+		
+		echo "<form action='register.php' method='post'>";
+		
+		echo "<p>Name? <select name='participantspinner'>";
+		foreach ($rm->getParticipants() as $participant) {
+			echo "<option>" . $participant->getName() . "</option>";
+		}
+		echo "</select><span class='error'>";
+		if (isset($_SESSION['errorRegisterParticipant']) && !empty($_SESSION['errorRegisterParticipant'])) {
+			echo " * " . $_SESSION["errorRegisterParticipant"];
+		}
+		echo "</span></p>";
+		
+		echo "<p>Event? <select name='eventspinner'>";
+		foreach ($rm->getEvents() as $event) {
+			echo "<option>" . $event->getName() . "</option>";
+		}
+		echo "</select><span class='error'>";
+		if (isset($_SESSION['errorRegisterEvent']) && !empty($_SESSION['errorRegisterEvent'])) {
+			echo " * " . $_SESSION["errorRegisterEvent"];
+		}
+		echo "</span></p>";
+		
+		echo "<p><input type='submit' value='Register' /></p>";
+		echo "</form>";
 		?>
+		
 		<form action="addparticipant.php" method="post">
-			<p>Name? <input type="text" name="participant_name" />
-			<span class="error">
+			<p>Name? <input type="text" name="participant_name" /><span class="error">
 			<?php  
-			if (isset($_SESSION['errorParticipantName'])&& !empty($_SESSION['errorParticipantName'])) {
+			if (isset($_SESSION['errorParticipantName']) && !empty($_SESSION['errorParticipantName'])) {
 				echo " * " . $_SESSION["errorParticipantName"];
 			}
 			?>
@@ -48,22 +57,30 @@
 			<p><input type="submit" value="Add Participant"/></p>
 		</form>
 		
-		<?php 
-		require_once "Model/Event.php";		
-		?>
 		<form action="addevent.php" method="post">
-			<p>Name? <input type="text" name="event_name" />
-			<span class="error">
+		<p>Event Name? <input type="text" name="event_name" /><span class="error">
 			<?php  
 			if (isset($_SESSION['errorEventName'])&& !empty($_SESSION['errorEventName'])) {
 				echo " * " . $_SESSION["errorEventName"];
 			}
+			if (isset($_SESSION['errorEventDate']) && !empty($_SESSION['errorEventDate'])) {
+				echo " * " . $_SESSION["errorEventDate"];
+			}
+			if (isset($_SESSION['errorStartTime']) && !empty($_SESSION['errorStartTime'])) {
+				echo " * " . $_SESSION["errorStartTime"];
+			}
+			if (isset($_SESSION['errorEndTime']) && !empty($_SESSION['errorEndTime'])) {
+				echo " * " . $_SESSION["errorEndTime"];
+			}
 			?>
 			</span></p>
-			<p>Date? <input type="date" name="event_date" value="<?php echo date('Y-m-d'); ?>" /></p>
-			<p>Start time? <input type="time" name="starttime" value="<?php echo date('H:i'); ?>" /></p>
-			<p>End time? <input type="time" name="endtime" value="<?php echo date('H:i'); ?>" /></p>
-			<p><input type="submit" value="Add Event"/></p>
+		<p>Date? <input type="date" name="event_date"
+				value="<?php echo date('Y-m-d'); ?>" /></p>
+		<p>Start time? <input type="time" name="starttime"
+				value="<?php echo date('H:i'); ?>" /></p>
+		<p>End time? <input type="time" name="endtime"
+				value="<?php echo date('H:i'); ?>" /></p>
+		<p><input type="submit" value="Add Event" /></p>
 		</form>
 	</body>
 </html>

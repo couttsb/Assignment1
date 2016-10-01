@@ -11,8 +11,7 @@ class ControllerTest extends PHPUnit_Framework_TestCase
     protected $pm;
     protected $rm;
 
-    protected function setUp()
-    {
+    protected function setUp(){
         $this->c = new Controller();
         $this->pm = new PersistenceEventRegistration();
         $this->rm = $this->pm->loadDataFromStore();
@@ -20,8 +19,7 @@ class ControllerTest extends PHPUnit_Framework_TestCase
         $this->pm->writeDataToStore($this->rm);
     }
 
-    protected function tearDown()
-    {
+    protected function tearDown() {
     }
 
     public function testCreateParticipant() {
