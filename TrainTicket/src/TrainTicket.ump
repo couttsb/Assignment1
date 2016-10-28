@@ -1,0 +1,131 @@
+namespace ca.mcgill.ecse321.trainticket.model;
+
+class TicketKioskManager {
+  singleton;
+  1 -> * Registration;
+  1 -> * Ticket;
+  1 -> * CreditPayment;
+}
+
+class Destination {
+  String name;
+  Boolean departureTimeWithin15Minutes;
+  Time departureTime;
+  Time tripDuration;
+}
+
+class CabinType {
+  String economy;
+  String business;
+  String firstClass;
+}
+
+class TicketPrice {
+  Double economyPrice;
+  Double businessPrice;
+  Double firstClassPrice;
+}
+
+class NumberTickets {
+  Integer economyNumber;
+  Integer businessNumber;
+  Integer firstClassNumber;
+}
+
+class Cost {
+  * -> 1 TicketPrice;
+  * -> 1 NumberTickets;  
+  Double totalCost;
+}
+
+class CreditPayment {
+  autounique authorizationCode;
+  Integer creditNumber;
+  Boolean cancel;
+  * -> 1 TransactionError;
+}
+
+class Ticket {
+  Integer authorizationCode;
+  * -> 1 Destination;
+  Date todaysDate;
+  * -> 1 CabinType;
+  Date transactionDate;
+  Time transactionTime;
+  Integer last4CreditDigits;
+  * -> 1 Cost;
+}
+
+class TransactionError {
+  Boolean retry;
+  Boolean quit;
+  * -> 1 UnsuccessfulTransactionLog;
+}
+
+class UnsuccessfulTransactionLog {
+  String unsucessfulTransactions;
+  Integer numberUnsuccessfulTransactions;
+}
+
+class Registration {
+  autounique id;
+  * -> 1 Destination destination;
+  * -> 1 CabinType cabin;
+}//$?[End_of_model]$?
+
+class TicketKioskManager
+{
+  position 218 34 142 45;
+  position.association Registration__TicketKioskManager 142,9 0,10;
+  position.association Ticket__TicketKioskManager 95,45 4,0;
+}
+
+class Destination
+{
+  position 50 130 109 45;
+}
+
+class CabinType
+{
+  position 50 230 109 45;
+}
+
+class TicketPrice
+{
+  position 50 330 109 45;
+}
+
+class NumberTickets
+{
+  position 50 430 109 45;
+}
+
+class Cost
+{
+  position 250 30 109 45;
+}
+
+class CreditPayment
+{
+  position 250 130 109 45;
+}
+
+class Ticket
+{
+  position 250 230 109 45;
+}
+
+class TransactionError
+{
+  position 250 330 109 45;
+}
+
+class UnsuccessfulTransactionLog
+{
+  position 250 430 109 45;
+}
+
+class Registration
+{
+  position 450 30 109 45;
+}
