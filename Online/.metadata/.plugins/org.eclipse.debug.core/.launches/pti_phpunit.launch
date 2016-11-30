@@ -2,10 +2,10 @@
 <launchConfiguration type="org.phprc.eclipse.pti.core.launching.PHPToolLaunchType">
 <stringAttribute key="ATTR_FILE" value="C:\Program Files\Eclipse\plugins\org.phpsrc.eclipse.pti.tools.phpunit_0.8.0.R20111119000000\php\tools\phpunit.php"/>
 <stringAttribute key="ATTR_FILE_FULL_PATH" value="C:\Program Files\Eclipse\plugins\org.phpsrc.eclipse.pti.tools.phpunit_0.8.0.R20111119000000\php\tools\phpunit.php"/>
-<stringAttribute key="ATTR_INI_LOCATION" value="C:\Users\Brent\AppData\Local\Temp\zend_debug\session7819379580043433815.tmp\php.ini"/>
+<stringAttribute key="ATTR_INI_LOCATION" value="C:\Users\Brent\AppData\Local\Temp\zend_debug\session7789522137198106423.tmp\php.ini"/>
 <stringAttribute key="ATTR_LOCATION" value="C:\xampp\php\php.exe"/>
 <stringAttribute key="ATTR_PHP_TOOL_QUALIFIED_NAME" value="org.phpsrc.eclipse.pti.tools.phpunit:PHPUnit"/>
-<stringAttribute key="exeDebugArguments" value="--log-json php://stdout ControllerTest &quot;C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Test\ControllerTest.php&quot;"/>
+<stringAttribute key="exeDebugArguments" value="--log-json php://stdout ControllerTest &quot;C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Test\ControllerTest.php&quot;"/>
 <booleanAttribute key="firstLineBreakpoint" value="false"/>
 <booleanAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_OUTPUT_ON" value="true"/>
 <booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>

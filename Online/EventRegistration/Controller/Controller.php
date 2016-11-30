@@ -1,10 +1,10 @@
 <?php
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Controller\InputValidator.php';
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Persistence\PersistenceEventRegistration.php';
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\Event.php';
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\Participant.php';
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\Registration.php';
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\RegistrationManager.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Controller\InputValidator.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Persistence\PersistenceEventRegistration.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Model\Event.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Model\Participant.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Model\Registration.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Model\RegistrationManager.php';
 
 class Controller {
 	public function __construct(){

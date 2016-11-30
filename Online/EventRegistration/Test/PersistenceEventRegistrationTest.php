@@ -1,7 +1,7 @@
 <?php
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Persistence\PersistenceEventRegistration.php';
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\RegistrationManager.php';
-require_once 'C:\Users\Brent\ECSE-Assignment1\Online\EventRegistration\Model\Participant.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Persistence\PersistenceEventRegistration.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Model\RegistrationManager.php';
+require_once 'C:\Users\Brent\ECSE321-Assignment1\Online\EventRegistration\Model\Participant.php';
 
 class PersistenceEventRegistrationTest extends PHPUnit_Framework_TestCase {
 	protected $pm;
